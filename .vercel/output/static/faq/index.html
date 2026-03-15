@@ -1,0 +1,155 @@
+<!DOCTYPE html><html lang="de"> <head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Häufige Fragen zu WipeMe: DSGVO Daten löschen lassen, Recht auf Löschung nach Art. 17 DSGVO, Sicherheit, App-Passwörter und mehr."><meta name="theme-color" content="#FAF7F2"><link rel="canonical" href="https://wipeme.cc/faq"><meta property="og:title" content="FAQ — WipeMe"><meta property="og:description" content="Häufige Fragen zu WipeMe: DSGVO Daten löschen lassen, Recht auf Löschung nach Art. 17 DSGVO, Sicherheit, App-Passwörter und mehr."><meta property="og:type" content="website"><meta property="og:url" content="https://wipeme.cc/faq"><meta property="og:locale" content="de_DE"><meta property="og:site_name" content="WipeMe"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="FAQ — WipeMe"><meta name="twitter:description" content="Häufige Fragen zu WipeMe: DSGVO Daten löschen lassen, Recht auf Löschung nach Art. 17 DSGVO, Sicherheit, App-Passwörter und mehr."><link rel="alternate" hreflang="de" href="https://wipeme.cc/faq"><link rel="alternate" hreflang="en" href="https://wipeme.cc/en/faq"><link rel="alternate" hreflang="x-default" href="https://wipeme.cc/faq"><link rel="preload" href="/fonts/outfit-400.ttf" as="font" type="font/ttf" crossorigin><link rel="preload" href="/fonts/dm-serif-display-regular.ttf" as="font" type="font/ttf" crossorigin><title>FAQ — WipeMe</title> <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was ist das Recht auf Löschung?","acceptedAnswer":{"@type":"Answer","text":"Art. 17 DSGVO gibt dir das Recht, von Unternehmen zu verlangen, dass sie deine personenbezogenen Daten löschen. Unternehmen haben nach Eingang deines Antrags 30 Tage Zeit zu reagieren. Bei besonders komplexen Anfragen dürfen sie die Frist um bis zu zwei weitere Monate verlängern, müssen dich darüber aber informieren. Das Recht gilt für alle Personen mit Wohnsitz im EU/EWR-Raum."}},{"@type":"Question","name":"Wie funktioniert WipeMe?","acceptedAnswer":{"@type":"Answer","text":"WipeMe folgt drei Schritten: Zuerst verbindest du dein E-Mail-Konto per IMAP mit einem App-Passwort. Dann scannt WipeMe deinen Posteingang nach Anmeldebestätigungen und erkennt automatisch, bei welchen Diensten du registriert bist. Schließlich generiert WipeMe für jeden Dienst eine rechtskonforme Löschanfrage und versendet sie direkt über deinen eigenen SMTP-Server — ganz ohne Zwischenspeicherung auf fremden Servern."}},{"@type":"Question","name":"Ist es sicher, mein E-Mail-Passwort einzugeben?","acceptedAnswer":{"@type":"Answer","text":"Deine Zugangsdaten werden clientseitig mit AES-256-GCM verschlüsselt, bevor sie das Gerät verlassen. Der WipeMe-Server verarbeitet sie ausschließlich im RAM für die Dauer des Scans oder des E-Mail-Versands und verwirft sie danach sofort — es gibt keine Datenbank, kein Log, keine Festplattenspeicherung. Empfohlen wird außerdem die Verwendung eines App-Passworts statt deines Hauptpassworts."}},{"@type":"Question","name":"Was ist ein App-Passwort?","acceptedAnswer":{"@type":"Answer","text":"Ein App-Passwort ist ein separates, speziell generiertes Passwort für Drittanbieter-Apps, das du in den Sicherheitseinstellungen deines E-Mail-Anbieters erstellen kannst. Es ermöglicht WipeMe den IMAP/SMTP-Zugriff, ohne dass du dein eigentliches Konto-Passwort preisgibst. App-Passwörter lassen sich jederzeit widerrufen. Gmail, Outlook, GMX, web.de und die meisten anderen Anbieter unterstützen diese Funktion."}},{"@type":"Question","name":"Welche E-Mail-Anbieter werden unterstützt?","acceptedAnswer":{"@type":"Answer","text":"WipeMe unterstützt Gmail, Outlook/Hotmail, GMX, web.de, Yahoo Mail, iCloud Mail sowie ProtonMail (über die Bridge). Darüber hinaus funktioniert WipeMe mit jedem E-Mail-Konto, das IMAP und SMTP anbietet — du kannst Serverdaten und Port manuell eingeben."}},{"@type":"Question","name":"Wie lange haben Unternehmen Zeit zu antworten?","acceptedAnswer":{"@type":"Answer","text":"Nach der DSGVO haben Unternehmen 30 Tage Zeit, auf einen Löschantrag zu reagieren. Bei besonders komplexen oder zahlreichen Anfragen dürfen sie die Frist um bis zu zwei weitere Monate verlängern. Sie sind dann jedoch verpflichtet, dich innerhalb der ersten 30 Tage über die Verlängerung zu informieren und eine Begründung anzugeben."}},{"@type":"Question","name":"Was passiert, wenn ein Unternehmen nicht antwortet?","acceptedAnswer":{"@type":"Answer","text":"WipeMe erinnert dich im Tracking-Dashboard, wenn die 30-Tage-Frist abläuft, und hilft dir, eine Erinnerungs-E-Mail zu versenden. Reagiert das Unternehmen weiterhin nicht, kannst du Beschwerde bei der zuständigen Datenschutzbehörde einlegen — in Deutschland beispielsweise beim Landesbeauftragten für Datenschutz und Informationsfreiheit deines Bundeslandes."}},{"@type":"Question","name":"Kostet WipeMe etwas?","acceptedAnswer":{"@type":"Answer","text":"Nein. WipeMe ist vollständig kostenlos und Open Source unter der MIT-Lizenz. Du kannst es auf wipeme.cc nutzen oder selbst auf deiner eigenen Infrastruktur hosten. Es gibt keine Premium-Version, keine versteckten Gebühren und keine Werbung."}},{"@type":"Question","name":"Ist WipeMe Open Source?","acceptedAnswer":{"@type":"Answer","text":"Ja. WipeMe steht unter der MIT-Lizenz. Der vollständige Quellcode ist auf GitHub einsehbar, überprüfbar und kann frei verwendet, geforkt und selbst betrieben werden. Transparenz ist ein Kernprinzip: Du kannst selbst nachvollziehen, was WipeMe mit deinen Daten macht — nämlich nichts Bleibendes."}},{"@type":"Question","name":"Wo werden meine Daten gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Ausschließlich in deinem eigenen Browser. WipeMe verwendet localStorage für persistente Daten (gefundene Dienste, Versandstatus, Spracheinstellung) und sessionStorage für deine verschlüsselten Zugangsdaten, die beim Schließen des Tabs automatisch gelöscht werden. Auf dem Server werden keinerlei Nutzerdaten gespeichert. Du kannst alle lokal gespeicherten Daten jederzeit über die App oder die Browser-Einstellungen löschen."}},{"@type":"Question","name":"Kann ich alle Anfragen auf einmal senden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Wenn du mehrere Dienste auswählst, öffnet sich der Sammelversand. Du gibst deinen Namen einmal ein, wählst die Sprache, und WipeMe schickt dann nacheinander an alle. Du siehst dabei einen Fortschrittsbalken und am Ende eine Übersicht, was geklappt hat und was nicht."}},{"@type":"Question","name":"Findet WipeMe auch Newsletter-Abos?","acceptedAnswer":{"@type":"Answer","text":"Ja. Neben Registrierungsbestätigungen erkennt WipeMe auch Newsletter-Abonnements. In den Ergebnissen kannst du zwischen Accounts und Newslettern filtern. Für Newsletter gibt es ein eigenes Template, das Abmeldung und Datenlöschung kombiniert."}},{"@type":"Question","name":"Kann ich Accounts aus meinem Passwort-Manager importieren?","acceptedAnswer":{"@type":"Answer","text":"Ja. Du kannst eine CSV-Datei aus Chrome, Firefox, 1Password oder Bitwarden hochladen. WipeMe liest nur die URLs daraus, gleicht sie mit der Unternehmensdatenbank ab und ignoriert die Passwörter komplett. Die Datei verlässt nie deinen Browser."}},{"@type":"Question","name":"Welche Datenschutzgesetze werden unterstützt?","acceptedAnswer":{"@type":"Answer","text":"WipeMe generiert Anfragen für zehn Rechtsrahmen: DSGVO (EU, 30 Tage), UK GDPR (30 Tage), CCPA (USA, 45 Tage), LGPD (Brasilien, 15 Tage), DPDPA (Indien, 90 Tage), PIPA (Südkorea, 14 Tage), PDPA (Thailand, 90 Tage), APPI (Japan, 21 Tage) und Quebec Law 25 (Kanada, 30 Tage). Das passende Gesetz wird automatisch anhand des Unternehmenssitzes gewählt."}},{"@type":"Question","name":"Kann ich auch eine Auskunftsanfrage stellen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Im Anfrage-Dialog kannst du zwischen Löschantrag und Auskunftsanfrage (Art. 15 DSGVO) wechseln. Die Auskunftsanfrage fordert eine Kopie aller über dich gespeicherten Daten an. Gleiche Fristen, gleiches Tracking."}},{"@type":"Question","name":"Erkennt WipeMe Antworten von Unternehmen?","acceptedAnswer":{"@type":"Answer","text":"Im Tracking-Dashboard gibt es den Button „Antworten prüfen\". WipeMe scannt dann dein Postfach nach Mails von Unternehmen, an die du Anfragen geschickt hast, und sucht nach typischen Antwortmustern wie „Ihre Daten wurden gelöscht\". Gefundene Antworten werden als Vorschlag angezeigt, du entscheidest ob du sie als erledigt markierst."}},{"@type":"Question","name":"Erinnert mich WipeMe an ablaufende Fristen?","acceptedAnswer":{"@type":"Answer","text":"Du kannst Browser-Benachrichtigungen aktivieren. WipeMe prüft dann beim Öffnen, ob Fristen in den nächsten 7 Tagen ablaufen, und zeigt eine Notification. Außerdem kannst du alle Fristen als .ics-Datei in deinen Kalender exportieren — dann erinnert dich Google Calendar, Outlook oder Apple Calendar direkt."}}]}</script> <link rel="stylesheet" href="/_astro/Layout.DMeDtVjQ.css"></head> <body class="min-h-screen antialiased">   <nav class="fixed top-0 w-full z-50 bg-[var(--color-cream)]/80 backdrop-blur-xl border-b border-[var(--color-sand)]/60"> <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"> <a href="/" class="flex items-center gap-2.5 group"> <img src="/logo.svg" alt="WipeMe" class="w-7 h-7 transition-transform group-hover:rotate-[-8deg]"> <span class="text-base font-semibold text-[var(--color-forest)] font-[var(--font-body)]">WipeMe</span> </a> <div class="flex items-center gap-3"> <div class="flex items-center gap-0.5 rounded-lg bg-white p-1 border border-[var(--color-sand)]"> <a href="/faq" class="px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider transition-all duration-200 bg-[var(--color-forest)] text-white shadow-sm">DE</a> <a href="/en/faq" class="px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider transition-all duration-200 text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]">EN</a> </div> <a href="/" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors flex items-center gap-1.5"> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg> Startseite </a> </div> </div> </nav> <main class="pt-28 pb-24 px-6"> <div class="max-w-2xl mx-auto"> <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-ink-muted)] mb-6"> <ol class="flex items-center gap-1.5 flex-wrap"> <li class="flex items-center gap-1.5">  <a href="/" class="hover:text-[var(--color-forest)] transition-colors"> WipeMe </a> </li><li class="flex items-center gap-1.5"> <span class="text-[var(--color-sand)]">/</span> <span class="text-[var(--color-ink)]">FAQ</span> </li> </ol> </nav> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"WipeMe","item":"https://wipeme.cc/"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://wipeme.cc/faq"}]}</script> <div class="mb-12 reveal delay-1"> <p class="pill bg-[var(--color-forest)]/[0.06] text-[var(--color-forest)] border border-[var(--color-forest)]/10 mb-6">
+Häufige Fragen
+</p> <h1 class="headline-serif text-4xl md:text-5xl text-[var(--color-ink)] mb-4">
+FAQ
+</h1> <p class="text-[var(--color-ink-muted)] text-[15px]">
+Alles, was du über WipeMe und das Recht auf Datenlöschung wissen musst.
+</p> </div> <div class="space-y-4"> <section class="card p-8 reveal delay-2"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Was ist das Recht auf Löschung?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Art. 17 DSGVO gibt dir das Recht, von Unternehmen zu verlangen, dass sie deine
+            personenbezogenen Daten löschen. Unternehmen haben nach Eingang deines Antrags
+<strong class="text-[var(--color-ink)] font-medium">30 Tage</strong> Zeit zu reagieren.
+            Bei besonders komplexen Anfragen dürfen sie die Frist um bis zu zwei weitere Monate
+            verlängern, müssen dich darüber aber informieren. Das Recht gilt für alle Personen
+            mit Wohnsitz im <strong class="text-[var(--color-ink)] font-medium">EU/EWR-Raum</strong>.
+</p> </section> <section class="card p-8 reveal delay-2"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Wie funktioniert WipeMe?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+WipeMe folgt drei Schritten:
+</p> <ul class="space-y-3 text-[15px] text-[var(--color-ink-muted)]"> <li class="flex items-start gap-3"> <div class="w-6 h-6 rounded-full bg-[var(--color-forest)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">1</div> <span>Du verbindest dein E-Mail-Konto per IMAP mit einem App-Passwort.</span> </li> <li class="flex items-start gap-3"> <div class="w-6 h-6 rounded-full bg-[var(--color-sage)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">2</div> <span>WipeMe scannt deinen Posteingang nach Anmeldebestätigungen und erkennt, bei welchen Diensten du registriert bist.</span> </li> <li class="flex items-start gap-3"> <div class="w-6 h-6 rounded-full bg-[var(--color-teal)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">3</div> <span>WipeMe generiert rechtskonforme Löschanfragen und versendet sie direkt über deinen eigenen SMTP-Server.</span> </li> </ul> </section> <section class="card p-8 reveal delay-3"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Ist es sicher, mein E-Mail-Passwort einzugeben?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Deine Zugangsdaten werden clientseitig mit <strong class="text-[var(--color-ink)] font-medium">AES-256-GCM</strong> verschlüsselt,
+            bevor sie das Gerät verlassen. Der WipeMe-Server verarbeitet sie ausschließlich
+            im RAM für die Dauer des Scans oder des E-Mail-Versands und verwirft sie danach sofort.
+</p> <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)]"> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Keine Datenbank, kein Log, keine Festplattenspeicherung.</span> </li> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Empfohlen: App-Passwort statt Hauptpasswort verwenden.</span> </li> </ul> </section> <section class="card p-8 reveal delay-3"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Was ist ein App-Passwort?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Ein App-Passwort ist ein separates, speziell generiertes Passwort für Drittanbieter-Apps,
+            das du in den Sicherheitseinstellungen deines E-Mail-Anbieters erstellen kannst.
+            Es ermöglicht WipeMe den IMAP/SMTP-Zugriff, ohne dass du dein eigentliches
+            Konto-Passwort preisgibst. App-Passwörter lassen sich jederzeit widerrufen.
+            Gmail, Outlook, GMX, web.de und die meisten anderen Anbieter unterstützen diese Funktion.
+</p> </section> <section class="card p-8 reveal delay-3"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Welche E-Mail-Anbieter werden unterstützt?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+WipeMe unterstützt die gängigsten Anbieter nativ:
+</p> <ul class="space-y-1.5 text-[15px] text-[var(--color-ink-muted)] mb-4 ml-1"> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+Gmail, Outlook / Hotmail
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+GMX, web.de
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+Yahoo Mail, iCloud Mail
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+ProtonMail (über die Bridge)
+</li> </ul> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Darüber hinaus funktioniert WipeMe mit jedem E-Mail-Konto, das IMAP und SMTP anbietet —
+            du kannst Serverdaten und Port manuell eingeben.
+</p> </section> <section class="card p-8 reveal delay-4"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Wie lange haben Unternehmen Zeit zu antworten?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Nach der DSGVO haben Unternehmen <strong class="text-[var(--color-ink)] font-medium">30 Tage</strong> Zeit,
+            auf einen Löschantrag zu reagieren. Bei besonders komplexen oder zahlreichen Anfragen
+            dürfen sie die Frist um bis zu zwei weitere Monate verlängern. Sie sind dann verpflichtet,
+            dich innerhalb der ersten 30 Tage über die Verlängerung zu informieren und eine
+            Begründung anzugeben.
+</p> </section> <section class="card p-8 reveal delay-4"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Was passiert, wenn ein Unternehmen nicht antwortet?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+WipeMe erinnert dich im Tracking-Dashboard, wenn die 30-Tage-Frist abläuft,
+            und hilft dir, eine Erinnerungs-E-Mail zu versenden.
+</p> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Reagiert das Unternehmen weiterhin nicht, kannst du Beschwerde bei der zuständigen
+            Datenschutzbehörde einlegen — in Deutschland beim Landesbeauftragten für Datenschutz
+            und Informationsfreiheit deines Bundeslandes.
+</p> </section> <section class="card p-8 reveal delay-4"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Kostet WipeMe etwas?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Nein. WipeMe ist vollständig kostenlos und Open Source unter der
+<strong class="text-[var(--color-ink)] font-medium">MIT-Lizenz</strong>.
+</p> <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)]"> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Kostenlose Nutzung auf wipeme.cc.</span> </li> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Selbst hostbar auf deiner eigenen Infrastruktur.</span> </li> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Keine Premium-Version, keine Werbung, keine versteckten Gebühren.</span> </li> </ul> </section> <section class="card p-8 reveal delay-5"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Ist WipeMe Open Source?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Ja. WipeMe steht unter der MIT-Lizenz. Der vollständige Quellcode ist auf
+<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-[var(--color-forest)] hover:underline font-medium">GitHub</a>
+einsehbar, überprüfbar und kann frei verwendet, geforkt und selbst betrieben werden.
+            Transparenz ist ein Kernprinzip: Du kannst selbst nachvollziehen, was WipeMe
+            mit deinen Daten macht — nämlich nichts Bleibendes.
+</p> </section> <section class="card p-8 reveal delay-5"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Wo werden meine Daten gespeichert?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Ausschließlich in deinem eigenen Browser. Auf dem Server werden
+<strong class="text-[var(--color-ink)] font-medium">keinerlei Nutzerdaten gespeichert</strong>.
+</p> <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)]"> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span><code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1 py-0.5 rounded text-[13px]">localStorage</code> — gefundene Dienste, Versandstatus, Spracheinstellung.</span> </li> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span><code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1 py-0.5 rounded text-[13px]">sessionStorage</code> — verschlüsselte Zugangsdaten, werden beim Schließen des Tabs gelöscht.</span> </li> <li class="flex items-start gap-2.5"> <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg> <span>Alle lokal gespeicherten Daten lassen sich jederzeit über die App oder die Browser-Einstellungen löschen.</span> </li> </ul> </section> <section class="card p-8 reveal delay-6"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Kann ich alle Anfragen auf einmal senden?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Ja. Wenn du mehrere Dienste auswählst, öffnet sich der Sammelversand.
+            Du gibst deinen Namen einmal ein, wählst die Sprache, und WipeMe schickt
+            dann nacheinander an alle. Du siehst dabei einen Fortschrittsbalken und
+            am Ende eine Übersicht, was geklappt hat und was nicht.
+</p> </section> <section class="card p-8 reveal delay-6"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Findet WipeMe auch Newsletter-Abos?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Ja. Neben Registrierungsbestätigungen erkennt WipeMe auch Newsletter-Abonnements.
+            In den Ergebnissen kannst du zwischen Accounts und Newslettern filtern.
+            Für Newsletter gibt es ein eigenes Template, das Abmeldung und Datenlöschung kombiniert.
+</p> </section> <section class="card p-8 reveal delay-6"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Kann ich Accounts aus meinem Passwort-Manager importieren?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Ja. Du kannst eine CSV-Datei aus Chrome, Firefox, 1Password oder Bitwarden hochladen.
+            WipeMe liest nur die URLs daraus, gleicht sie mit der Unternehmensdatenbank ab
+            und ignoriert die Passwörter komplett.
+</p> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Die Datei verlässt nie deinen Browser.
+</p> </section> <section class="card p-8 reveal delay-6"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Welche Datenschutzgesetze werden unterstützt?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+WipeMe generiert Anfragen für zehn Rechtsrahmen:
+</p> <ul class="space-y-1.5 text-[15px] text-[var(--color-ink-muted)] mb-4 ml-1"> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+DSGVO (EU) — 30 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+UK GDPR — 30 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+CCPA (USA) — 45 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+LGPD (Brasilien) — 15 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+DPDPA (Indien) — 90 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+PIPA (Südkorea) — 14 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+PDPA (Thailand) — 90 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+APPI (Japan) — 21 Tage
+</li> <li class="flex items-center gap-2.5"> <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sage)] shrink-0"></span>
+Quebec Law 25 (Kanada) — 30 Tage
+</li> </ul> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Das passende Gesetz wird automatisch anhand des Unternehmenssitzes gewählt.
+</p> </section> <section class="card p-8 reveal delay-7"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Kann ich auch eine Auskunftsanfrage stellen?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Ja. Im Anfrage-Dialog kannst du zwischen Löschantrag und Auskunftsanfrage
+            (<strong class="text-[var(--color-ink)] font-medium">Art. 15 DSGVO</strong>) wechseln.
+            Die Auskunftsanfrage fordert eine Kopie aller über dich gespeicherten Daten an.
+            Gleiche Fristen, gleiches Tracking.
+</p> </section> <section class="card p-8 reveal delay-7"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Erkennt WipeMe Antworten von Unternehmen?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Im Tracking-Dashboard gibt es den Button „Antworten prüfen". WipeMe scannt dann
+            dein Postfach nach Mails von Unternehmen, an die du Anfragen geschickt hast,
+            und sucht nach typischen Antwortmustern wie „Ihre Daten wurden gelöscht".
+</p> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Gefundene Antworten werden als Vorschlag angezeigt. Du entscheidest, ob du sie
+            als erledigt markierst.
+</p> </section> <section class="card p-8 reveal delay-7"> <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-3">
+Erinnert mich WipeMe an ablaufende Fristen?
+</h2> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+Du kannst Browser-Benachrichtigungen aktivieren. WipeMe prüft dann beim Öffnen,
+            ob Fristen in den nächsten 7 Tagen ablaufen, und zeigt eine Notification.
+</p> <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+Außerdem kannst du alle Fristen als <code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1 py-0.5 rounded text-[13px]">.ics</code>-Datei
+            exportieren. Dann erinnert dich Google Calendar, Outlook oder Apple Calendar direkt.
+</p> </section> </div> <div class="mt-10 reveal delay-5"> <a href="/" class="inline-flex items-center gap-2 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors"> <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path> </svg>
+Zurück zur Startseite
+</a> </div> </div> </main> <footer class="py-12 px-6 border-t border-[var(--color-sand)]"> <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4"> <div class="flex items-center gap-3"> <img src="/logo.svg" alt="WipeMe" class="w-5 h-5 opacity-50"> <span class="text-sm text-[var(--color-ink-muted)]">WipeMe · Open Source · MIT-Lizenz</span> </div> <div class="flex items-center gap-4 md:gap-6 flex-wrap justify-center"> <a href="/legal" class="text-sm transition-colors text-[var(--color-ink-muted)] hover:text-[var(--color-forest)]"> Impressum </a> <span class="text-[var(--color-sand)] hidden md:inline">|</span><a href="/privacy" class="text-sm transition-colors text-[var(--color-ink-muted)] hover:text-[var(--color-forest)]"> Datenschutz </a> <span class="text-[var(--color-sand)] hidden md:inline">|</span><a href="/faq" class="text-sm transition-colors font-medium text-[var(--color-forest)]"> FAQ </a> <span class="text-[var(--color-sand)] hidden md:inline">|</span><a href="/why" class="text-sm transition-colors text-[var(--color-ink-muted)] hover:text-[var(--color-forest)]"> Warum WipeMe </a>  <span class="text-[var(--color-sand)] hidden md:inline">|</span> <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors">GitHub</a> </div> </div> </footer>  </body></html>

@@ -119,7 +119,7 @@ function AppFooter({ t, language }: { t: Translations; language: Language }) {
           ))}
           <span className="text-[var(--color-sand)] hidden md:inline">|</span>
           <a
-            href="https://github.com"
+            href="https://github.com/Rick-dnd/WipeMe"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors"
