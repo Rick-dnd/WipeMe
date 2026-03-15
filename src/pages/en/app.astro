@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import WipeMeApp from '../../components/App';
+export const prerender = true;
+---
+
+<Layout title="WipeMe — App" lang="en">
+  <WipeMeApp client:load />
+</Layout>

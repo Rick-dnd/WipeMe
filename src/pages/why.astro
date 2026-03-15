@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import JsonLd from '../components/JsonLd.astro';
+import ContentNav from '../components/ContentNav.astro';
+import { getAlternates, getCanonicalUrl } from '../lib/seo.ts';
+import Footer from '../components/Footer.astro';
+
+export const prerender = true;
+
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Warum WipeMe?',
+  url: getCanonicalUrl('/why'),
+  description: 'Warum Datenlöschung wichtig ist und was WipeMe von anderen Ansätzen unterscheidet.',
+  inLanguage: 'de',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'WipeMe',
+    url: 'https://wipeme.cc',
+  },
+};
+
+const breadcrumbItems = [
+  { name: 'WipeMe', url: 'https://wipeme.cc/' },
+  { name: 'Warum WipeMe', url: 'https://wipeme.cc/why' },
+];
+---
+
+<Layout
+  title="Warum WipeMe? — WipeMe"
+  description="Daten löschen, digitale Privatsphäre zurückgewinnen. Warum das DSGVO-Recht auf Löschung wichtig ist und wie WipeMe als Zero-Knowledge-Tool den Unterschied macht."
+  lang="de"
+  canonical="https://wipeme.cc/why"
+  alternates={getAlternates('/why', '/en/why')}
+>
+  <Fragment slot="head">
+    <JsonLd data={webPageJsonLd} />
+  </Fragment>
+
+  <ContentNav lang="de" currentPath="why" />
+
+  <main class="pt-28 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <div class="mb-12 reveal delay-1">
+        <p class="pill bg-[var(--color-forest)]/[0.06] text-[var(--color-forest)] border border-[var(--color-forest)]/10 mb-6">
+          Hintergrund
+        </p>
+        <h1 class="headline-serif text-4xl md:text-5xl text-[var(--color-ink)] mb-4">
+          Warum WipeMe?
+        </h1>
+        <p class="text-[var(--color-ink-muted)] text-[15px]">
+          Deine Daten, deine Entscheidung — was dahintersteckt und wie WipeMe hilft.
+        </p>
+      </div>
+
+      <section class="card p-8 mb-6 reveal delay-2">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          Das Problem
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          Du meldest dich bei einem neuen Dienst an — einen Newsletter hier, ein Kundenkonto dort,
+          eine App, die du einmal ausprobiert hast. Irgendwann vergisst du sie. Aber die Unternehmen
+          vergessen dich nicht.
+        </p>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-5">
+          Hunderte von Diensten haben deine E-Mail-Adresse, deinen Namen, vielleicht deine
+          Adresse oder dein Kaufverhalten gespeichert. Datenlecks, Datenweitergabe an Dritte,
+          unerwünschte Kontaktaufnahme — die Konsequenzen können Jahre später auftauchen.
+        </p>
+        <div class="rounded-xl bg-[var(--color-forest)]/[0.04] border border-[var(--color-forest)]/10 p-5">
+          <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+            Die <strong class="text-[var(--color-ink)] font-medium">DSGVO gibt dir das Recht</strong>,
+            das zu ändern. Art. 17 verpflichtet Unternehmen, deine Daten auf Anfrage zu löschen.
+            Das Problem: Einzeln bei jedem Dienst anzufragen ist zeitaufwendig, frustrierend
+            und schlicht unrealistisch, wenn man an Dutzende oder Hunderte von Diensten denkt.
+          </p>
+        </div>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-3">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          Die Lösung
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-5">
+          WipeMe automatisiert den Prozess. Dein Postfach ist das Gedächtnis deiner digitalen
+          Vergangenheit — jede Anmeldebestätigung, die du je erhalten hast, ist ein Hinweis
+          auf einen Dienst, bei dem deine Daten noch gespeichert sind.
+        </p>
+        <ul class="space-y-4 text-[15px] text-[var(--color-ink-muted)]">
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-forest)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">1</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Postfach scannen</p>
+              <p>WipeMe verbindet sich einmalig per IMAP mit deinem Posteingang und durchsucht ihn nach Anmeldebestätigungen — ohne den E-Mail-Text zu lesen.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-sage)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">2</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Dienste erkennen</p>
+              <p>Über 2.700 Unternehmen sind im Firmenverzeichnis erfasst, mit Datenschutz-E-Mails, Webformularen und regionalen Rechtsrahmen.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-teal)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">3</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Löschanfragen versenden</p>
+              <p>WipeMe generiert rechtskonforme Anträge und versendet sie direkt von deinem eigenen E-Mail-Konto. In Minuten statt Stunden.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-3">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          Warum anders?
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-5">
+          Die meisten Datenschutztools lösen ein Problem, indem sie ein neues schaffen: Sie sammeln
+          deine Daten zentral und werden selbst zu einem Vertrauensproblem. WipeMe verfolgt
+          einen anderen Ansatz.
+        </p>
+        <ul class="space-y-3 text-[15px] text-[var(--color-ink-muted)]">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>
+              <strong class="text-[var(--color-ink)] font-medium">Zero-Knowledge-Architektur</strong> —
+              keine Datenbank, keine Nutzerkonten, keine serverseitige Speicherung.
+              Alles läuft in deinem Browser.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>
+              <strong class="text-[var(--color-ink)] font-medium">AES-256-GCM-Verschlüsselung</strong> —
+              deine E-Mail-Zugangsdaten werden clientseitig verschlüsselt. Der Server verarbeitet
+              sie nur flüchtig im RAM und vergisst sie sofort.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>
+              <strong class="text-[var(--color-ink)] font-medium">Open Source unter MIT</strong> —
+              der vollständige Quellcode ist öffentlich. Du musst WipeMe nicht vertrauen —
+              du kannst es überprüfen.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>
+              <strong class="text-[var(--color-ink)] font-medium">Selbst hostbar</strong> —
+              du kannst WipeMe auf deiner eigenen Infrastruktur betreiben,
+              vollständig unter deiner Kontrolle.
+            </span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>
+              <strong class="text-[var(--color-ink)] font-medium">Keine Cookies, kein Tracking, keine Werbung</strong> —
+              WipeMe verdient kein Geld mit deinen Daten. Es gibt schlicht keine zu verkaufen.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card p-8 mb-8 reveal delay-4">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          Dein Recht
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-5">
+          Das Recht auf Datenlöschung existiert in verschiedenen Formen rund um die Welt.
+          WipeMe kennt die regionalen Unterschiede und generiert die jeweils passenden Anträge.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-4 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-24 pt-0.5">EU / EWR</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-0.5">DSGVO — Art. 17</p>
+              <p class="text-[var(--color-ink-muted)]">Recht auf Löschung, 30-Tage-Frist, zuständige Aufsichtsbehörden in jedem Mitgliedstaat.</p>
+            </div>
+          </div>
+          <div class="h-px bg-[var(--color-sand)]"></div>
+          <div class="flex items-start gap-4 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-24 pt-0.5">Vereinigtes Königreich</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-0.5">UK GDPR</p>
+              <p class="text-[var(--color-ink-muted)]">Weitgehend deckungsgleich mit der EU-DSGVO, Aufsicht durch das ICO.</p>
+            </div>
+          </div>
+          <div class="h-px bg-[var(--color-sand)]"></div>
+          <div class="flex items-start gap-4 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-24 pt-0.5">USA</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-0.5">CCPA (Kalifornien)</p>
+              <p class="text-[var(--color-ink-muted)]">Right to Delete für kalifornische Einwohner, spezifische Anforderungen an den Antragstext.</p>
+            </div>
+          </div>
+          <div class="h-px bg-[var(--color-sand)]"></div>
+          <div class="flex items-start gap-4 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-24 pt-0.5">Brasilien</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-0.5">LGPD</p>
+              <p class="text-[var(--color-ink-muted)]">Lei Geral de Proteção de Dados, ähnliche Grundrechte wie die DSGVO.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="rounded-2xl bg-[var(--color-forest)] p-8 text-center reveal delay-4">
+        <h2 class="headline-serif text-2xl text-white mb-3">
+          Bereit, deine Daten zurückzuholen?
+        </h2>
+        <p class="text-white/70 text-[15px] mb-6">
+          Verbinde dein Postfach, finde heraus, wo deine Daten liegen,
+          und schicke Löschanfragen in Minuten.
+        </p>
+        <a
+          href="/app"
+          class="inline-flex items-center gap-2 bg-white text-[var(--color-forest)] font-semibold text-[15px] px-6 py-3 rounded-full hover:bg-[var(--color-cream)] transition-colors"
+        >
+          Jetzt loslegen
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="mt-10 reveal delay-5">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Zurück zur Startseite
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang="de" currentPath="why" />
+
+</Layout>

@@ -1,0 +1,19 @@
+---
+interface Props {
+  lang: string;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const dePath = currentPath ? `/${currentPath}` : '/';
+const enPath = currentPath ? `/en/${currentPath}` : '/en/';
+
+const activeClass = 'px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider transition-all duration-200 bg-[var(--color-forest)] text-white shadow-sm';
+const inactiveClass = 'px-2.5 py-1 rounded-md text-xs font-semibold tracking-wider transition-all duration-200 text-[var(--color-ink-muted)] hover:text-[var(--color-ink)]';
+---
+
+<div class="flex items-center gap-0.5 rounded-lg bg-white p-1 border border-[var(--color-sand)]">
+  <a href={dePath} class={lang === 'de' ? activeClass : inactiveClass}>DE</a>
+  <a href={enPath} class={lang === 'en' ? activeClass : inactiveClass}>EN</a>
+</div>

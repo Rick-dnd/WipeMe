@@ -1,0 +1,49 @@
+---
+interface Props {
+  lang: string;
+  currentPath?: string;
+}
+
+const { lang, currentPath = '' } = Astro.props;
+
+const isDE = lang === 'de';
+const prefix = isDE ? '' : '/en';
+
+const links = [
+  { href: `${prefix}/legal`, label: isDE ? 'Impressum' : 'Legal Notice', path: 'legal' },
+  { href: `${prefix}/privacy`, label: isDE ? 'Datenschutz' : 'Privacy Policy', path: 'privacy' },
+  { href: `${prefix}/faq`, label: 'FAQ', path: 'faq' },
+  { href: `${prefix}/why`, label: isDE ? 'Warum WipeMe' : 'Why WipeMe', path: 'why' },
+];
+
+const copyText = isDE ? 'WipeMe \u00B7 Open Source \u00B7 MIT-Lizenz' : 'WipeMe \u00B7 Open Source \u00B7 MIT License';
+---
+
+<footer class="py-12 px-6 border-t border-[var(--color-sand)]">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <img src="/logo.svg" alt="WipeMe" class="w-5 h-5 opacity-50" />
+      <span class="text-sm text-[var(--color-ink-muted)]" set:html={copyText} />
+    </div>
+    <div class="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
+      {links.map((link, i) => (
+        <>
+          {i > 0 && <span class="text-[var(--color-sand)] hidden md:inline">|</span>}
+          <a
+            href={link.href}
+            class:list={[
+              'text-sm transition-colors',
+              currentPath === link.path
+                ? 'font-medium text-[var(--color-forest)]'
+                : 'text-[var(--color-ink-muted)] hover:text-[var(--color-forest)]',
+            ]}
+          >
+            {link.label}
+          </a>
+        </>
+      ))}
+      <span class="text-[var(--color-sand)] hidden md:inline">|</span>
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-ink)] transition-colors">GitHub</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,494 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContentNav from '../components/ContentNav.astro';
+import { getAlternates } from '../lib/seo.ts';
+import Footer from '../components/Footer.astro';
+export const prerender = true;
+
+const lastUpdated = '15. März 2026';
+---
+
+<Layout
+  title="Datenschutzerklärung — WipeMe"
+  description="Datenschutzerklärung / Privacy Policy für WipeMe. DSGVO-konforme Erklärung zur Datenverarbeitung."
+  alternates={getAlternates('/privacy', '/en/privacy')}
+>
+
+  <ContentNav lang="de" currentPath="privacy" />
+
+  <main class="pt-28 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="mb-12 reveal delay-1">
+        <p class="pill bg-[var(--color-forest)]/[0.06] text-[var(--color-forest)] border border-[var(--color-forest)]/10 mb-6">
+          Rechtliche Angaben
+        </p>
+        <h1 class="headline-serif text-4xl md:text-5xl text-[var(--color-ink)] mb-4">
+          Datenschutzerklärung
+        </h1>
+        <p class="text-[var(--color-ink-muted)] text-[15px]">
+          Stand: {lastUpdated} &middot; Gemäß DSGVO / According to GDPR
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-[var(--color-sage)]/30 bg-[var(--color-forest)]/[0.03] p-8 mb-10 reveal delay-2">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="px-2.5 py-0.5 rounded-full bg-[var(--color-forest)] text-white text-xs font-semibold tracking-wide">EN</span>
+          <h2 class="text-base font-semibold text-[var(--color-ink)]">English Summary</h2>
+        </div>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe is a zero-knowledge privacy tool. Here is what you need to know in plain English:
+        </p>
+        <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)]">
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>No database, no server-side data storage, no user accounts.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>All your data (encrypted credentials, scan results, sent requests) is stored exclusively in your own browser via <code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1 py-0.5 rounded text-[13px]">localStorage</code>.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Your email credentials are encrypted client-side with AES-256-GCM before any network activity. The server uses them only in RAM for the duration of the operation and discards them immediately.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>No cookies. No tracking. No analytics. No third-party scripts. Fonts are self-hosted.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>The operator of this instance is responsible for the legal data controller role (GDPR Art. 4 No. 7). The hosting provider may process standard server access logs (IP, timestamp, user agent).</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>You can delete all locally stored data at any time through the app or by clearing your browser storage.</span>
+          </li>
+        </ul>
+        <p class="text-xs text-[var(--color-ink-muted)] mt-5 pt-4 border-t border-[var(--color-sand)]">
+          The legally binding version of this privacy policy is the German text below.
+          The English summary is provided for convenience only.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4 mb-10">
+        <div class="h-px flex-1 bg-[var(--color-sand)]"></div>
+        <span class="px-2.5 py-0.5 rounded-full bg-[var(--color-sand)] text-[var(--color-ink-muted)] text-xs font-semibold tracking-wide">DE</span>
+        <div class="h-px flex-1 bg-[var(--color-sand)]"></div>
+      </div>
+
+      <section class="card p-8 mb-6 reveal delay-2">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          1. Verantwortlicher
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          Der Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) ist der
+          <strong class="text-[var(--color-ink)] font-medium">Betreiber dieser WipeMe-Instanz</strong>.
+          Bei Fragen zum Datenschutz wenden Sie sich bitte an den Betreiber. Die Kontaktdaten
+          des Betreibers sind dem Impressum dieser Instanz zu entnehmen.
+        </p>
+        <p class="text-[var(--color-ink-muted)] text-[14px] bg-[var(--color-cream-dark)]/60 rounded-xl p-4 leading-relaxed">
+          Ein Datenschutzbeauftragter ist gemäß Art. 37 DSGVO nicht erforderlich, da keine
+          umfangreiche systematische Verarbeitung personenbezogener Daten stattfindet.
+        </p>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-3">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          2. Überblick der Datenverarbeitung
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe ist ein datenschutzfreundliches Zero-Knowledge-Tool. Das bedeutet:
+        </p>
+        <ul class="space-y-3 text-[15px] text-[var(--color-ink-muted)]">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Es gibt <strong class="text-[var(--color-ink)] font-medium">keine Datenbank</strong> und keine serverseitige Datenspeicherung.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Es werden <strong class="text-[var(--color-ink)] font-medium">keine Nutzerkonten</strong> angelegt.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Alle Nutzerdaten werden <strong class="text-[var(--color-ink)] font-medium">ausschließlich im Browser</strong> des Nutzers gespeichert (<code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1 py-0.5 rounded text-[13px]">localStorage</code>).</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Der Server verarbeitet personenbezogene Daten nur <strong class="text-[var(--color-ink)] font-medium">flüchtig im Arbeitsspeicher</strong> — niemals persistent.</span>
+          </li>
+        </ul>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mt-4">
+          Die folgenden Abschnitte beschreiben die einzelnen Verarbeitungsvorgänge im Detail.
+        </p>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-3">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          3. Hosting
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          Diese Instanz wird von ihrem Betreiber auf einer Hosting-Plattform seiner Wahl betrieben.
+          Beim Abruf der Website verarbeitet der Hosting-Anbieter als Auftragsverarbeiter im Rahmen
+          des Betriebs der Infrastruktur automatisch folgende Daten in Server-Access-Logs:
+        </p>
+        <ul class="space-y-1.5 text-[15px] text-[var(--color-ink-muted)] mb-4 ml-4">
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            IP-Adresse des anfragenden Endgeräts
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            Datum und Uhrzeit der Anfrage (Zeitstempel)
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            Aufgerufene URL und HTTP-Methode
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            HTTP-Statuscode
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            User-Agent (Browser- und Betriebssystemkennung)
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0"></span>
+            Übertragene Datenmenge
+          </li>
+        </ul>
+        <div class="space-y-3 text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse). Das berechtigte Interesse liegt in der sicheren und stabilen
+            Bereitstellung des Dienstes sowie der Erkennung und Abwehr von Missbrauch.
+          </p>
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Speicherdauer:</strong> Die Speicherdauer
+            der Server-Access-Logs richtet sich nach der Konfiguration des jeweiligen Hosting-Anbieters.
+            Üblicherweise werden diese Daten nach 7–14 Tagen automatisch gelöscht.
+          </p>
+          <p class="text-[14px] bg-[var(--color-cream-dark)]/60 rounded-xl p-4">
+            Betreiber dieser Instanz: Bitte ergänzen Sie hier die Angaben zu Ihrem konkreten
+            Hosting-Anbieter (Name, Sitz, Datenschutzerklärung, ggf. Drittlandübermittlung)
+            sowie die konkrete Speicherdauer der Server-Access-Logs.
+          </p>
+        </div>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-4">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          4. Lokale Datenspeicherung (localStorage)
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe nutzt den <code class="text-[var(--color-forest)] bg-[var(--color-forest)]/[0.06] px-1.5 py-0.5 rounded text-[13px]">localStorage</code>
+          des Browsers, um folgende Daten lokal auf Ihrem Gerät zu speichern:
+        </p>
+        <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)] mb-5 ml-4">
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0 mt-1.5"></span>
+            <span>AES-256-GCM-verschlüsselte E-Mail-Zugangsdaten (IMAP/SMTP)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0 mt-1.5"></span>
+            <span>Spracheinstellung der Benutzeroberfläche (DE/EN)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0 mt-1.5"></span>
+            <span>Gefundene Dienste aus dem Postfach-Scan (ausschließlich Metadaten: Absender, Betreff, Datum)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-sand)] shrink-0 mt-1.5"></span>
+            <span>Status gesendeter Löschanfragen</span>
+          </li>
+        </ul>
+        <div class="space-y-3 text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Rechtsgrundlage:</strong> § 25 Abs. 2 Nr. 2
+            TDDDG (technisch notwendig für die Erbringung des Dienstes). Da es sich um technisch
+            erforderliche lokale Speicherung handelt, ist kein Cookie-Banner erforderlich.
+          </p>
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Löschung:</strong> Sie können alle lokal
+            gespeicherten Daten jederzeit über die Einstellungen der Anwendung oder durch Löschen
+            der Browser-Daten in Ihrem Browser entfernen. Die Daten verlassen Ihr Gerät nur im
+            Rahmen der unter Abschnitt 5 beschriebenen Verarbeitung.
+          </p>
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Keine Drittpartei-Weitergabe:</strong> Die im
+            localStorage gespeicherten Daten werden nicht an Dritte übertragen und sind
+            ausschließlich dem von Ihnen genutzten Browser zugänglich.
+          </p>
+        </div>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-4">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          5. Verarbeitung von E-Mail-Zugangsdaten
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          Zur Nutzung von WipeMe geben Sie Ihre E-Mail-Adresse und ein App-Passwort (IMAP/SMTP)
+          ein. Diese Daten werden wie folgt verarbeitet:
+        </p>
+        <div class="space-y-4 text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-forest)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">1</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Client-seitige Verschlüsselung</p>
+              <p>Die Zugangsdaten werden im Browser mit <strong>AES-256-GCM</strong> verschlüsselt.
+              Der Verschlüsselungsschlüssel wird automatisch generiert und lokal im Browser gespeichert.
+              Der verschlüsselte Datensatz wird im localStorage abgelegt.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-sage)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">2</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Übertragung zum Server</p>
+              <p>Für den IMAP-Scan und den SMTP-Versand werden die Zugangsdaten clientseitig
+              entschlüsselt und über eine <strong>HTTPS/TLS-verschlüsselte Verbindung</strong>
+              an den WipeMe-Server übermittelt.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-[var(--color-teal)] text-white flex items-center justify-center text-xs font-semibold shrink-0 mt-0.5">3</div>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium mb-1">Serverseitige Verarbeitung</p>
+              <p>Der Server verarbeitet die Zugangsdaten <strong>ausschließlich im
+              Arbeitsspeicher (RAM)</strong>. Sie werden nie auf Festplatte, in eine Datenbank
+              oder in Log-Dateien geschrieben. Nach Abschluss der Operation (Scan oder
+              E-Mail-Versand) werden die Zugangsdaten sofort verworfen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 pt-5 border-t border-[var(--color-sand)] text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
+          <p>
+            <strong class="text-[var(--color-ink)] font-medium">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
+            (Vertragserfüllung bzw. vorvertragliche Maßnahmen — die Verarbeitung ist zur Erbringung
+            des Dienstes technisch notwendig) oder, sofern keine vertragliche Beziehung vorliegt,
+            Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch aktive Nutzung des Dienstes).
+          </p>
+        </div>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          6. Verarbeitung von E-Mail-Inhalten
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe greift via IMAP auf Ihren Posteingang zu, um Registrierungsbestätigungen zu
+          identifizieren. Dabei gilt:
+        </p>
+        <ul class="space-y-3 text-[15px] text-[var(--color-ink-muted)] mb-5">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Es werden ausschließlich <strong class="text-[var(--color-ink)] font-medium">E-Mail-Metadaten</strong> verarbeitet: Absenderadresse, Betreffzeile und Datum.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">E-Mail-Texte (Bodies) werden nie gelesen</strong>, übertragen oder verarbeitet.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Die Metadaten werden vom Server an den Browser zurückgegeben und dort im
+            localStorage gespeichert. Der Server speichert keine E-Mail-Daten.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Die Metadaten verlassen Ihren Browser nur, wenn Sie aktiv eine Löschanfrage auslösen.</span>
+          </li>
+        </ul>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+          <strong class="text-[var(--color-ink)] font-medium">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b
+          DSGVO (zur Vertragserfüllung technisch notwendig).
+        </p>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          7. DSGVO-Löschanfragen (Art. 17 DSGVO)
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          Löschanfragen werden <strong class="text-[var(--color-ink)] font-medium">direkt von Ihrem eigenen
+          SMTP-Mailserver</strong> aus Ihrem eigenen E-Mail-Konto versendet. WipeMe fungiert
+          dabei ausschließlich als technischer Vermittler.
+        </p>
+        <ul class="space-y-2 text-[15px] text-[var(--color-ink-muted)] mb-4">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>WipeMe speichert keine Kopien der versendeten Löschanfragen.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Der Versandstatus wird lokal im Browser gespeichert.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span>Der Nutzer ist für den Inhalt und die inhaltliche Richtigkeit der versendeten Anfragen selbst verantwortlich.</span>
+          </li>
+        </ul>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+          <strong class="text-[var(--color-ink)] font-medium">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b
+          DSGVO (Vertragserfüllung).
+        </p>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          8. Keine externen Dienste / Drittanbieter
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe bindet bewusst keine externen Dienste ein:
+        </p>
+        <ul class="space-y-2.5 text-[15px] text-[var(--color-ink-muted)]">
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Keine Google Fonts</strong> — alle Schriftarten sind selbst gehostet, es findet keine Verbindung zu Google-Servern statt.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Kein Tracking / keine Analytics</strong> — es werden keine Web-Analytics-Dienste (z. B. Google Analytics, Matomo, Plausible) eingesetzt.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Keine Cookies</strong> — es werden keinerlei Cookies gesetzt, weder technisch notwendige noch optionale.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Keine Social-Media-Plugins</strong> — keine Einbindung von Facebook, X, LinkedIn oder ähnlichen Diensten.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Keine Werbung</strong> — keine Werbenetzwerke, keine Remarketing-Pixel.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-[var(--color-sage)] mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span><strong class="text-[var(--color-ink)] font-medium">Keine CDN-Drittquellen</strong> für JavaScript oder CSS — alle Assets werden vom eigenen Server ausgeliefert.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          9. Ihre Rechte als betroffene Person
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-5">
+          Ihnen stehen gemäß DSGVO folgende Rechte zu. Da WipeMe keine personenbezogenen Daten
+          serverseitig speichert, sind viele dieser Rechte bereits durch die technische Architektur
+          der Anwendung gewährleistet.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 15</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Auskunftsrecht</p>
+              <p class="text-[var(--color-ink-muted)]">Sie haben das Recht, Auskunft über die Sie betreffenden gespeicherten personenbezogenen Daten zu erhalten. Da keine serverseitige Speicherung stattfindet, können Sie alle gespeicherten Daten direkt in Ihrem Browser einsehen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 16</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Recht auf Berichtigung</p>
+              <p class="text-[var(--color-ink-muted)]">Sie haben das Recht, die Berichtigung unrichtiger Daten zu verlangen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 17</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Recht auf Löschung</p>
+              <p class="text-[var(--color-ink-muted)]">Sie können alle lokal gespeicherten Daten jederzeit über die App oder über die Browsereinstellungen löschen. Serverseitige Daten existieren nicht.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 18</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Recht auf Einschränkung der Verarbeitung</p>
+              <p class="text-[var(--color-ink-muted)]">Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 20</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Recht auf Datenübertragbarkeit</p>
+              <p class="text-[var(--color-ink-muted)]">Sie haben das Recht, die Sie betreffenden Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten. Da WipeMe alle Daten ausschließlich im localStorage Ihres Browsers speichert, können Sie diese jederzeit selbst über die Browser-Entwicklertools einsehen und exportieren.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 21</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Widerspruchsrecht</p>
+              <p class="text-[var(--color-ink-muted)]">Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer Daten Widerspruch einzulegen.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 text-[15px]">
+            <span class="text-[var(--color-forest)] font-semibold shrink-0 w-8">Art. 7(3)</span>
+            <div>
+              <p class="text-[var(--color-ink)] font-medium">Widerruf der Einwilligung</p>
+              <p class="text-[var(--color-ink-muted)]">Soweit die Verarbeitung auf einer Einwilligung beruht, haben Sie das Recht, diese jederzeit ohne Angabe von Gründen zu widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung wird hierdurch nicht berührt.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-6 pt-5 border-t border-[var(--color-sand)] text-[15px] text-[var(--color-ink-muted)] leading-relaxed">
+          <p class="mb-2">
+            <strong class="text-[var(--color-ink)] font-medium">Beschwerderecht bei der Aufsichtsbehörde (Art. 77 DSGVO):</strong>
+          </p>
+          <p>
+            Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
+            Zuständig ist in der Regel die Aufsichtsbehörde Ihres gewöhnlichen Aufenthaltsorts,
+            Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
+          </p>
+          <p class="mt-3">
+            Zur Wahrnehmung Ihrer Rechte wenden Sie sich bitte an den Betreiber dieser Instanz.
+            Die Kontaktdaten des Betreibers sind dem Impressum zu entnehmen. Anfragen werden
+            innerhalb eines Monats beantwortet (Art. 12 Abs. 3 DSGVO).
+          </p>
+        </div>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          10. SSL/TLS-Verschlüsselung
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+          Diese Website und alle API-Endpunkte nutzen aus Sicherheitsgründen und zum Schutz der
+          Übertragung vertraulicher Inhalte eine <strong class="text-[var(--color-ink)] font-medium">HTTPS/TLS-Verschlüsselung</strong>.
+          Eine verschlüsselte Verbindung erkennen Sie an dem Schloss-Symbol in der Adressleiste
+          Ihres Browsers. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten,
+          die Sie an WipeMe übermitteln, nicht von Dritten mitgelesen werden.
+        </p>
+      </section>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">
+          11. Änderungen dieser Datenschutzerklärung
+        </h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed">
+          Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen
+          rechtlichen Anforderungen anzupassen oder um Änderungen unserer Dienste in der
+          Datenschutzerklärung umzusetzen. Die jeweils aktuelle Version gilt für Ihren nächsten
+          Besuch. Das Datum der letzten Aktualisierung finden Sie am Anfang dieser Seite.
+        </p>
+        <p class="text-[var(--color-ink-muted)] text-[14px] mt-3 pt-3 border-t border-[var(--color-sand)]">
+          Stand: {lastUpdated}
+        </p>
+      </section>
+
+      <div class="mt-10 reveal delay-5">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Zurück zur Startseite
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang="de" currentPath="privacy" />
+
+</Layout>
+

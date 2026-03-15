@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import type { Alternate } from '../lib/seo.ts';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  canonical?: string;
+  alternates?: Alternate[];
+}
+
+const SITE = 'https://wipeme.cc';
+const defaultDesc = {
+  de: 'Hol dir die Kontrolle über deine Daten zurück. WipeMe findet jeden Dienst, bei dem du angemeldet bist, und verschickt DSGVO-Löschanfragen — direkt von deiner E-Mail. Kein Account nötig, keine Datenspeicherung.',
+  en: 'Take back your data. WipeMe finds every service you\'ve signed up for and sends GDPR deletion requests — from your own email. No account needed, no permanent server storage.',
+};
+
+const { title, description, lang = 'de', canonical, alternates } = Astro.props;
+const desc = description || defaultDesc[lang as 'de' | 'en'] || defaultDesc.de;
+const canonicalUrl = canonical || `${SITE}${Astro.url.pathname}`;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="#FAF7F2" />
+
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+    <meta property="og:site_name" content="WipeMe" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
+
+    {alternates?.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
+
+    <link rel="preload" href="/fonts/outfit-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="preload" href="/fonts/dm-serif-display-regular.ttf" as="font" type="font/ttf" crossorigin />
+
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen antialiased">
+    <slot />
+  </body>
+</html>

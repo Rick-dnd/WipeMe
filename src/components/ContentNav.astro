@@ -1,0 +1,35 @@
+---
+interface Props {
+  lang: string;
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+import LandingLanguageToggle from './LandingLanguageToggle.astro';
+
+const isDE = lang === 'de';
+const homeHref = isDE ? '/' : '/en/';
+const homeLabel = isDE ? 'Startseite' : 'Home';
+---
+
+<nav class="fixed top-0 w-full z-50 bg-[var(--color-cream)]/80 backdrop-blur-xl border-b border-[var(--color-sand)]/60">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href={homeHref} class="flex items-center gap-2.5 group">
+      <img src="/logo.svg" alt="WipeMe" class="w-7 h-7 transition-transform group-hover:rotate-[-8deg]" />
+      <span class="text-base font-semibold text-[var(--color-forest)] font-[var(--font-body)]">WipeMe</span>
+    </a>
+    <div class="flex items-center gap-3">
+      <LandingLanguageToggle lang={lang} currentPath={currentPath} />
+      <a
+        href={homeHref}
+        class="text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors flex items-center gap-1.5"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        {homeLabel}
+      </a>
+    </div>
+  </div>
+</nav>

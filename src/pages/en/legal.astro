@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContentNav from '../../components/ContentNav.astro';
+import { getAlternates } from '../../lib/seo.ts';
+import Footer from '../../components/Footer.astro';
+export const prerender = true;
+---
+
+<Layout
+  title="Legal Notice — WipeMe"
+  description="Legal Notice for this WipeMe instance. Open-source project under MIT license."
+  lang="en"
+  alternates={getAlternates('/legal', '/en/legal')}
+>
+
+  <ContentNav lang="en" currentPath="legal" />
+
+  <main class="pt-28 pb-24 px-6">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="mb-12 reveal delay-1">
+        <p class="pill bg-[var(--color-forest)]/[0.06] text-[var(--color-forest)] border border-[var(--color-forest)]/10 mb-6">
+          Legal Information
+        </p>
+        <h1 class="headline-serif text-4xl md:text-5xl text-[var(--color-ink)] mb-4">Legal Notice</h1>
+        <p class="text-[var(--color-ink-muted)] text-[15px]">
+          Legal disclosure as required by § 5 DDG (German Digital Services Act)
+        </p>
+      </div>
+
+      <section class="card p-8 mb-6 reveal delay-2">
+        <div class="flex items-center gap-2 mb-5">
+          <span class="px-2.5 py-0.5 rounded-full bg-[var(--color-forest)] text-white text-xs font-semibold tracking-wide">EN</span>
+          <h2 class="text-base font-semibold text-[var(--color-ink)]">Open-Source Project</h2>
+        </div>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          WipeMe is an <strong class="text-[var(--color-ink)] font-medium">open-source project</strong> released under the MIT license.
+          The source code is publicly available on GitHub and can be self-hosted by anyone.
+        </p>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-4">
+          This is a <strong class="text-[var(--color-ink)] font-medium">self-hosted instance</strong>.
+          An "Impressum" is a mandatory legal disclosure page required under German law (§ 5 DDG).
+          The operator of each self-hosted instance is responsible for providing their own legal information on this page.
+        </p>
+        <p class="text-xs text-[var(--color-ink-muted)] pt-4 border-t border-[var(--color-sand)]">
+          If you are the operator of this instance, please edit
+          <code class="font-mono text-[13px] bg-[var(--color-cream-dark)] px-1 py-0.5 rounded">src/pages/legal.astro</code>
+          and add your provider details as required by § 5 DDG.
+        </p>
+      </section>
+
+      <div class="rounded-2xl border border-amber-200/60 bg-amber-50/40 p-6 mb-6 reveal delay-3">
+        <div class="flex items-start gap-3">
+          <svg class="w-5 h-5 text-amber-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+          </svg>
+          <div>
+            <p class="text-[15px] font-medium text-amber-800 mb-1">Legal notice not yet configured</p>
+            <p class="text-[14px] text-amber-700 leading-relaxed">
+              The operator of this WipeMe instance has not yet added their legal information.
+              If you are the operator, please edit
+              (<code class="font-mono text-[13px] bg-amber-100 px-1 py-0.5 rounded">src/pages/legal.astro</code>)
+              and enter your provider information as required by § 5 DDG.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <section class="card p-8 mb-6 reveal delay-5">
+        <h2 class="text-lg font-semibold text-[var(--color-ink)] mb-4">Copyright</h2>
+        <p class="text-[var(--color-ink-muted)] text-[15px] leading-relaxed mb-3">
+          The WipeMe source code is released under the <strong class="text-[var(--color-ink)] font-medium">MIT License</strong>
+          and is freely available on GitHub. The license permits private and commercial use,
+          modification, and distribution provided the license notice is retained.
+        </p>
+        <div class="mt-5 pt-4 border-t border-[var(--color-sand)]">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm text-[var(--color-forest)] hover:underline underline-offset-2"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View WipeMe on GitHub
+          </a>
+        </div>
+      </section>
+
+      <div class="mt-10 reveal delay-5">
+        <a
+          href="/"
+          class="inline-flex items-center gap-2 text-sm text-[var(--color-ink-muted)] hover:text-[var(--color-forest)] transition-colors"
+        >
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Back to home
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer lang="en" currentPath="legal" />
+
+</Layout>
